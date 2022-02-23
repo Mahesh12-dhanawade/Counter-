@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+
+<style>
+    .container {
+        text-align: center;
+
+
+    }
+
+    .container h1 {
+        font-size: 40px;
+    }
+
+    .container button {
+        background-color: rgb(168, 32, 32);
+        color: white;
+        font-size: 50px;
+
+
+
+    }
+
+    .counter-plus {
+        width: 20vw;
+
+    }
+
+    .counter-plus:hover {
+        background-color: green;
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>COUNTER</h1>
+        <hr>
+        <h1 class="counter-display">(..)</h1>
+        <button class="counter-plus">+</button>
+    </div>
+
+    <script>
+
+        //defining variables
+        let counterDisplayElem = document.querySelector('.counter-display');
+        let counterPlusElem = document.querySelector('.counter-plus');
+
+        let count = 0;
+
+
+        //event listner to plus button
+        counterPlusElem.addEventListener("click", () => {
+            count++;
+            updateDisplay();
+        });
+
+
+        //function creation.
+        function updateDisplay() {
+            counterDisplayElem.innerHTML = count;
+        };
+
+        //function calling
+        updateDisplay();
+
+
+
+
+    </script>
+</body>
+
+</html>
