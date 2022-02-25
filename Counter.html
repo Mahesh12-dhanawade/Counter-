@@ -23,6 +23,8 @@
         background-color: rgb(168, 32, 32);
         color: white;
         font-size: 50px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px green;
 
 
 
@@ -44,33 +46,23 @@
     <div class="container">
         <h1>COUNTER</h1>
         <hr>
-        <h1 class="counter-display">(..)</h1>
-        <button class="counter-plus">+</button>
+        <h1 class="counter-display" id="display">0</h1>
+        <button class="counter-plus" onclick="handleCounter()">+</button>
     </div>
 
     <script>
-
-        //defining variables
-        let counterDisplayElem = document.querySelector('.counter-display');
-        let counterPlusElem = document.querySelector('.counter-plus');
-
         let count = 0;
-
-
-        //event listner to plus button
-        counterPlusElem.addEventListener("click", () => {
+        function handleCounter(){
+           
+            let counterElem = document.querySelectorAll('.counter-plus')
             count++;
-            updateDisplay();
-        });
+            document.getElementById("display").innerHTML=count;
+        }
+    
 
 
-        //function creation.
-        function updateDisplay() {
-            counterDisplayElem.innerHTML = count;
-        };
 
-        //function calling
-        updateDisplay();
+      
 
 
 
